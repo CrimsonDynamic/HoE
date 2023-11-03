@@ -1,0 +1,51 @@
+﻿focus_tree = {
+	id = austrian_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+	
+	default = no
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	# Austrian Focuses
+	
+	focus = {
+		id = AUS_the_start_of_something_big
+		icon = GFX_goal_generic_major
+		x = 3
+		y = 5
+
+		#prerequisite = { focus = AST_workers_paradise }
+		#relative_position_id = AST_empower_the_workers
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			}
+		}
+
+		available = {
+			NOT = { is_in_faction_with = JAP }
+			NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+		bypass = {
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = JAP
+				type = puppet_wargoal_focus
+				expire = 0 
+			}
+		}
+	}
+}
